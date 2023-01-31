@@ -2,7 +2,7 @@
 
 ## Puesta en Producción Segura
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled.png)
+![Untitled](img/Untitled.png)
 
 # Índice
 
@@ -21,7 +21,7 @@ El requisito mínimo para la entrega de este trabajo es la entrega de las activi
 
 De modo que he decidido subir a este repositorio de GitHub un zip por cada entrega realizada, para que así, quien entre, pueda revisarlas.
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%201.png)
+![Untitled](img/Untitled%201.png)
 
 ## Segunda parte: Docker-Bench
 
@@ -33,15 +33,15 @@ Para empezar clonamos el repositorio de Docker-Bench:
 git clone https://github.com/docker/docker-bench-security.git
 ```
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%202.png)
+![Untitled](img/Untitled%202.png)
 
 Una vez dentro del directorio ejecutamos el script de Docker-Bench:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%203.png)
+![Untitled](img/Untitled%203.png)
 
 A continuación nos muestra una checklist con los resultados de la prueba:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%204.png)
+![Untitled](img/Untitled%204.png)
 
 ### 2. Utiliza AuditD para que analice todas las pruebas de la Sección A, referente al host configuration.
 
@@ -51,7 +51,7 @@ Para poder utilizar AuditD, tenemos que instalarlo primero:
 sudo apt-get install auditd
 ```
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%205.png)
+![Untitled](img/Untitled%205.png)
 
 A continuación editamos el fichero  /etc/audit/rules.d/audit.rules y añadimos las siguientes reglas:
 
@@ -67,7 +67,7 @@ A continuación editamos el fichero  /etc/audit/rules.d/audit.rules y añadimos 
  -w /usr/bin/docker-runc -p wa
 ```
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%206.png)
+![Untitled](img/Untitled%206.png)
 
 > *“Con “-w” se indica que el fichero debe de ser auditado por “auditd” y “-p wa” indica que se deben generar logs ante cualquier modificación en dichos ficheros o directorios.”*
 > 
@@ -78,7 +78,7 @@ Una vez añadidas las reglas, reiniciamos AuditD para que las use:
 systemctl restart auditd
 ```
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%207.png)
+![Untitled](img/Untitled%207.png)
 
 ### 3. Ajustes de seguridad en el Demonio de Docker
 
@@ -112,7 +112,7 @@ Abajo explicamos por qué eliminamos la opción tachada arriba
 
 [Troubleshooting](https://www.notion.so/Troubleshooting-c0e62057f0cc40f986e933304687d0d6)
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%208.png)
+![Untitled](img/Untitled%208.png)
 
 Una vez guardados los cambios, volvemos a ejecutar Docker-Bench.
 
@@ -120,14 +120,14 @@ Como podemos observar ahora Docker-Bench nos proporciona una puntuación que ant
 
 ****Antes:****
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%209.png)
+![Untitled](img/Untitled%209.png)
 
 **Después:**
 
 > **Importante: reiniciar el servicio de Docker, sobre todo después de cambiar el daemon.json y ejecutar el Docker-Bench como super usuario.**
 > 
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2010.png)
+![Untitled](img/Untitled%2010.png)
 
 ### 4. Reparando warnings
 
@@ -135,11 +135,11 @@ A continuación vamos a seleccionar dos warnings, y vamos a aplicar una posible 
 
 - 1.1.4 - Ensure auditing is configured for Docker files and directories -/run/containerd (Automated)
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2011.png)
+![Untitled](img/Untitled%2011.png)
 
 - 1.1.3 - Ensure auditing is configured for the Docker daemon (Automated)
     
-    ![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2012.png)
+    ![Untitled](img/Untitled%2012.png)
     
 
 ### 4.5
@@ -150,7 +150,7 @@ Para la [4.5](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-c
 export DOCKER_CONTENT_TRUST=1
 ```
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2013.png)
+![Untitled](img/Untitled%2013.png)
 
 ### 1.1.3
 
@@ -166,11 +166,11 @@ Reiniciamos auditd:
 systemctl restart auditd
 ```
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2014.png)
+![Untitled](img/Untitled%2014.png)
 
 Vamos a volver a ejecutar el Docker-Bench:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2015.png)
+![Untitled](img/Untitled%2015.png)
 
 ### 1.1.4
 
@@ -184,11 +184,11 @@ Y reiniciamos auditd.
 
 Volvemos a ejecutar el Docker-Bench y esta vez está reparado:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2016.png)
+![Untitled](img/Untitled%2016.png)
 
 Ahora el resultado es el siguiente:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2017.png)
+![Untitled](img/Untitled%2017.png)
 
 ## Tercera parte: análisis de archivos Dockerfile
 
@@ -200,7 +200,7 @@ Para su instalación hemos utilizado el siguiente script:
 curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.36.1
 ```
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2018.png)
+![Untitled](img/Untitled%2018.png)
 
 Una vez instalado, ejecutamos Trivy para que analice mi imagen de
 
@@ -210,11 +210,11 @@ Una vez instalado, ejecutamos Trivy para que analice mi imagen de
 
 Probamos Trivy con la [imagen](https://hub.docker.com/r/sh4rkbit3/wordpress) que creé de Wordpress:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2019.png)
+![Untitled](img/Untitled%2019.png)
 
 En este caso la prueba la realizaremos en un Docker Desktop de Windows:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2020.png)
+![Untitled](img/Untitled%2020.png)
 
 Como podemos ver arriba, tenemos varias vulnerabilidades, de entre ellas, nueve son críticas.
 
@@ -222,7 +222,7 @@ Como podemos ver arriba, tenemos varias vulnerabilidades, de entre ellas, nueve 
 
 Escaneamos con Trivy como hicimos con la otra imagen:
 
-![Untitled](UT3%20-%20Seguridad%20y%20desplegado%20de%20aplicaciones%20con%20D/Untitled%2021.png)
+![Untitled](img/Untitled%2021.png)
 
 En este caso se han encontrado muchas vulnerabilidades críticas.
 
