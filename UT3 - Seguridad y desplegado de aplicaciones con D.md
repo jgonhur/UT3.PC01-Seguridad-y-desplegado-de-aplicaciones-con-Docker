@@ -202,8 +202,13 @@ curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/inst
 
 ![Untitled](img/Untitled%2018.png)
 
-Una vez instalado, ejecutamos Trivy para que analice mi imagen de
+Una vez instalado, ejecutamos Trivy para que analice la imagen construida a partir de mi Dockerfile:
 
+![Untitled](img/Untitled22.png)
+
+El escáner de vulnerabilidades nos muestra las siguientes estadísticas:
+
+![Untitled](img/Untitled23.png)
 ## Cuarta parte: análisis de imágenes
 
 ### Mi Wordpress
