@@ -6,14 +6,14 @@
 
 # Índice
 
-- [Primera parte: Dockerfile y Docker-Compose](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
-- [Segunda parte: Docker-Bench](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
-    - [1. Utiliza Docker-Bench y realiza un análisis previo de tu Docker.](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
-    - [2. Utiliza AuditD para que analice todas las pruebas de la Sección A, referente al host configuration.](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
-    - [3. Ajustes de seguridad en el Demonio de Docker](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
-    - [4. Reparando warnings](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
-- [Tercera parte: análisis de archivos Dockerfile](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
-- [Cuarta parte: análisis de imágenes](https://www.notion.so/UT3-Seguridad-y-desplegado-de-aplicaciones-con-Docker-bcf898ac0d8b42acb1b8ab00ff1f9f13)
+- Primera parte: Dockerfile y Docker-Compose
+- Segunda parte: Docker-Bench 
+  - Utiliza Docker-Bench y realiza un análisis previo de tu Docker.
+  - Utiliza AuditD para que analice todas las pruebas de la Sección A, referente al host configuration.
+  - Ajustes de seguridad en el Demonio de Docker
+  - Reparando warnings
+- Tercera parte: análisis de archivos Dockerfile
+- Cuarta parte: análisis de imágenes)
 
 ## Primera parte: Dockerfile y Docker-Compose
 
